@@ -67,9 +67,11 @@ for freecad_path in freecad_paths:
 import FreeCAD as App
 import Import
 
+freecad_file_to_test = sys.argv[1]
+print('testing freecad file {}'.format(freecad_file_to_test))
 
-filename = '{}/_workspace/freecad-playlist/common_parts.FCStd'.format(USER_HOME_DIR)
-App.open(filename)
+# filename = '{}/_workspace/freecad-playlist/common_parts.FCStd'.format(USER_HOME_DIR)
+App.open(freecad_file_to_test)
 App.setActiveDocument('common_parts')
 App.ActiveDocument.recompute()
 App.setActiveDocument("")
