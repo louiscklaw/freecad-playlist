@@ -68,7 +68,11 @@ import FreeCAD as App
 import Import
 
 freecad_file_to_test = sys.argv[1]
+freecad_document_name = os.path.basename(freecad_file_to_test)
+print(freecad_document_name)
+sys.exit()
 print('testing freecad file {}'.format(freecad_file_to_test))
+
 
 # filename = '{}/_workspace/freecad-playlist/common_parts.FCStd'.format(USER_HOME_DIR)
 App.open(freecad_file_to_test)
