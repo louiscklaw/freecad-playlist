@@ -19,7 +19,7 @@ before_script:
   - sudo apt-get install -y freecad freecad-python3
 
 script:
-  - ls -l /usr/lib/freecad-python3/lib
+  # - ls -l /usr/lib/freecad-python3/lib
   - python3 .travis/freecad_open_test.py common_parts.FCStd
 
 after_success:
