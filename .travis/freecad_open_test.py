@@ -49,16 +49,16 @@ freecad_paths = [
   '/usr/share/freecad/Mod',
   '/usr/lib/freecad/lib64',
   '/usr/lib/freecad-python3/lib',
-  # '/usr/share/freecad/Ext',
-  # '',
-  # '/usr/lib/python36.zip',
-  # '/usr/lib/python3.6',
-  # '/usr/lib/python3.6/lib-dynload',
-  # '{}/.local/lib/python3.6/site-packages'.format(USER_HOME_DIR),
-  # '/usr/local/lib/python3.6/dist-packages',
-  # '/usr/lib/python3/dist-packages',
-  # '{}/.FreeCAD/Macro'.format(USER_HOME_DIR),
-  # '/usr/lib/freecad/Macro'
+  '/usr/share/freecad/Ext',
+  '',
+  '/usr/lib/python36.zip',
+  '/usr/lib/python3.6',
+  '/usr/lib/python3.6/lib-dynload',
+  '{}/.local/lib/python3.6/site-packages'.format(USER_HOME_DIR),
+  '/usr/local/lib/python3.6/dist-packages',
+  '/usr/lib/python3/dist-packages',
+  '{}/.FreeCAD/Macro'.format(USER_HOME_DIR),
+  '/usr/lib/freecad/Macro'
 ]
 
 for freecad_path in freecad_paths:
