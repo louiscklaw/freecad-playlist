@@ -23,8 +23,6 @@ script:
   - sudo mkdir /usr/lib/freecad-python3/Mod
   # - python3 .travis/freecad_open_test.py common_parts.FCStd
   - for i in $(ls -1 *.FCStd); do python3 ./.travis/freecad_open_test.py $i; done
-
-after_success:
   - cd ./.travis
   - id
   - sudo apt update
