@@ -2,4 +2,5 @@
 
 set -ex
 
-# pre-push hook
+
+rsync -avzh ../$@/ .

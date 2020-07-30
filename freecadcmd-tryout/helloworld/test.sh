@@ -2,4 +2,4 @@
 
 set -ex
 
-# pre-push hook
+freecadcmd ./helloworld.py
