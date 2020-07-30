@@ -10,7 +10,7 @@ jobs:
     - stage: Test
       name: freecadcmd-tryout
       script:
-        - echo "helloworld"
+        - which freecad
 
         - cd freecadcmd-tryout/helloworld
         - freecadcmd ./helloworld.py
