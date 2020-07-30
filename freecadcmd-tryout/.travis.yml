@@ -11,3 +11,12 @@ jobs:
       name: freecadcmd-tryout
       script:
         - echo "helloworld"
+
+        - cd freecadcmd-tryout/helloworld
+        - freecadcmd ./helloworld.py
+        - cd -
+
+        - cd freecadcmd-tryout/take-screen-shot
+        - freecadcmd ./helloworld.py
+        - freecad ./take_screenshot.py
+        - cd -
