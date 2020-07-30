@@ -36,6 +36,11 @@ jobs:
         - sudo apt-get update
         - sudo apt-get install -y freecad freecad-python3
 
+        # - ls -l /usr/lib/freecad-python3/lib
+        - sudo mkdir /usr/lib/freecad-python3/Mod
+        # - python3 .travis/freecad_open_test.py common_parts.FCStd
+        - for i in $(ls -1 *.FCStd); do python3 ./.travis/freecad_open_test.py $i; done
+
     - stage: Merge
       script:
         - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
