@@ -34,4 +34,4 @@ stages:
 
 import:
   - freecadcmd-tryout/.travis.yml
-  - credentials.yml
+  - .credentials.yml
