@@ -23,5 +23,6 @@ jobs:
 
         - cd freecadcmd-tryout/take-screen-shot
         - freecadcmd ./helloworld.py
-        - freecad ./take_screenshot.py
+        - freecad ./take_screenshot.py || true
+        - ls -l screencapture
         - cd -
