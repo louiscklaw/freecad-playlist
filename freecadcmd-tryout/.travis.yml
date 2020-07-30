@@ -45,3 +45,6 @@ jobs:
         - freecadcmd ./helloworld.py
         - freecad ./take_screenshot.py
         - cd -
+
+      after_failure:
+        - cat $HOME/.FreeCAD/FreeCAD.log
