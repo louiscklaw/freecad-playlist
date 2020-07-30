@@ -8,5 +8,6 @@ os: linux
 jobs:
   include:
     - stage: Test
+      name: freecadcmd-tryout
       script:
         - echo "helloworld"
