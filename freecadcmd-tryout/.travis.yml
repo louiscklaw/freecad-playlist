@@ -26,7 +26,7 @@
 jobs:
   include:
     - stage: Test
-      name: freecadcmd-tryout
+      name: freecadcmd-tryout, take-screen-shot
       script:
         - echo 'helloworld'
 
@@ -38,13 +38,15 @@ jobs:
         - which freecadcmd
 
         - cd freecadcmd-tryout/helloworld
-        - freecadcmd ./helloworld.py
+        -   freecadcmd ./helloworld.py
         - cd -
 
         - cd freecadcmd-tryout/take-screen-shot
-        - freecadcmd ./helloworld.py
-        - freecad ./take_screenshot.py || true
-        - ls -l screencapture
+        -   freecadcmd ./helloworld.py
+        -   freecad ./take_screenshot.py || true
+        -   ls -l screencapture/test-screenshot0.jpg
+        -   ls -l screencapture/test-screenshot1.jpg
+        -   ls -l screencapture/test-screenshot2.jpg
         - cd -
 
       after_failure:

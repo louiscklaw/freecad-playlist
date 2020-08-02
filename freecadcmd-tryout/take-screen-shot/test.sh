@@ -6,3 +6,5 @@ rm -rf screencapture/*.jpg
 
 freecadcmd ./helloworld.py
 freecad ./take_screenshot.py -l test.log
+
+ls -l test-screenshot0.jpg
