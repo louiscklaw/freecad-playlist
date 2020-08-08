@@ -15,11 +15,8 @@ node_js:
 import:
   - freecadcmd-tryout/.travis.yml
   - credentials.yml
-
-
-
-# script:
-
+  - .travis-merger.yml
+  - .travis-stages.yml
 
 jobs:
   include:
@@ -42,12 +39,3 @@ jobs:
       script:
         - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
         - bash merge_if_success.sh
-
-stages:
-  - Unit_test
-  - Test
-  - Build
-  - Deploy
-  - Integration_to_other_repo
-  - Publish_dashboard
-  - Merge
