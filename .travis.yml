@@ -13,9 +13,10 @@ node_js:
   - 12
 
 import:
-  - freecadcmd-tryout/.travis.yml
   - credentials.yml
-
+  - freecadcmd-tryout/.travis.yml
+  - .travis-merger.yml
+  - .travis-stages.yml
 
 
 # script:
@@ -36,18 +37,3 @@ jobs:
         - sudo mkdir /usr/lib/freecad-python3/Mod
         # - python3 .travis/freecad_open_test.py common_parts.FCStd
         - for i in $(ls -1 *.FCStd); do python3 ./.travis/freecad_open_test.py $i; done
-
-
-    - stage: Merge
-      script:
-        - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-        - bash merge_if_success.sh
-
-stages:
-  - Unit_test
-  - Test
-  - Build
-  - Deploy
-  - Integration_to_other_repo
-  - Publish_dashboard
-  - Merge
