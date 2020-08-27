@@ -41,13 +41,15 @@ jobs:
         -   freecadcmd ./helloworld.py
         - cd -
 
-        - cd freecadcmd-tryout/take-screen-shot
-        -   freecadcmd ./helloworld.py
-        -   freecad ./take_screenshot.py || true
-        -   ls -l screencapture/test-screenshot0.jpg
-        -   ls -l screencapture/test-screenshot1.jpg
-        -   ls -l screencapture/test-screenshot2.jpg
-        - cd -
+        # TODO: resume this test as requires GUI, currently running on travis and i dunno how to do.
+        # QUESTION?: helloworld
+        # - cd freecadcmd-tryout/take-screen-shot
+        # -   freecadcmd ./helloworld.py
+        # -   freecadcmd ./take_screenshot.py
+        # -   ls -l screencapture/test-screenshot0.jpg
+        # -   ls -l screencapture/test-screenshot1.jpg
+        # -   ls -l screencapture/test-screenshot2.jpg
+        # - cd -
 
       after_failure:
         - cat $HOME/.FreeCAD/FreeCAD.log
