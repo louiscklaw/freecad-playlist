@@ -23,10 +23,21 @@
 #         - freecad ./take_screenshot.py
 #         - cd -
 
+dist: xenial
+services:
+  - xvfb
+
 jobs:
   include:
     - stage: Test
       name: freecadcmd-tryout, take-screen-shot
+
+      # running freecad requires GUI
+      before_script:
+        - "export DISPLAY=:99.0"
+        - "sh -e /etc/init.d/xvfb start"
+        - sleep 3 # give xvfb some time to start
+
       script:
         - echo 'helloworld'
 
@@ -41,15 +52,14 @@ jobs:
         -   freecadcmd ./helloworld.py
         - cd -
 
-        # TODO: resume this test as requires GUI, currently running on travis and i dunno how to do.
-        # QUESTION?: helloworld
-        # - cd freecadcmd-tryout/take-screen-shot
-        # -   freecadcmd ./helloworld.py
-        # -   freecadcmd ./take_screenshot.py
-        # -   ls -l screencapture/test-screenshot0.jpg
-        # -   ls -l screencapture/test-screenshot1.jpg
-        # -   ls -l screencapture/test-screenshot2.jpg
-        # - cd -
+        # NOTE: resume this test as requires GUI, currently running on travis and i dunno how to do.
+        - cd freecadcmd-tryout/take-screen-shot
+        -   freecadcmd ./helloworld.py
+        -   freecadcmd ./take_screenshot.py
+        -   ls -l screencapture/test-screenshot0.jpg
+        -   ls -l screencapture/test-screenshot1.jpg
+        -   ls -l screencapture/test-screenshot2.jpg
+        - cd -
 
       after_failure:
         - cat $HOME/.FreeCAD/FreeCAD.log
