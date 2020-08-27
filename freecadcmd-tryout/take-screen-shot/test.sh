@@ -2,9 +2,13 @@
 
 set -ex
 
-rm -rf screencapture/*.jpg
+cd freecadcmd-tryout/take-screen-shot
 
-freecadcmd ./helloworld.py
-freecad ./take_screenshot.py -l test.log
+  rm -rf screencapture/*.jpg
 
-ls -l test-screenshot0.jpg
+  freecadcmd ./helloworld.py
+  freecad ./take_screenshot.py -l test.log
+
+  ls -l screencapture/test-screenshot0.jpg
+
+cd ../..
