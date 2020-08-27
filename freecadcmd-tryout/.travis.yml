@@ -1,0 +1,51 @@
+# https://docs.travis-ci.com/user/docker/
+# https://docs.travis-ci.com/user/environment-variables/
+# https://docs.travis-ci.com/user/job-lifecycle/
+
+# jobs:
+#   include:
+#     - stage: Test
+#       name: freecadcmd-tryout
+#       script:
+#         - sudo add-apt-repository -y ppa:freecad-maintainers/freecad-stable
+#         - sudo apt-get update
+#         - sudo apt-get install -y freecad freecad-python3
+
+#         - which freecad
+#         - which freecadcmd
+
+#         - cd freecadcmd-tryout/helloworld
+#         - freecadcmd ./helloworld.py
+#         - cd -
+
+#         - cd freecadcmd-tryout/take-screen-shot
+#         - freecadcmd ./helloworld.py
+#         - freecad ./take_screenshot.py
+#         - cd -
+
+jobs:
+  include:
+    - stage: Test
+      name: freecadcmd-tryout
+      script:
+        - echo 'helloworld'
+
+        - sudo add-apt-repository -y ppa:freecad-maintainers/freecad-stable
+        - sudo apt-get update
+        - sudo apt-get install -y freecad freecad-python3
+
+        - which freecad
+        - which freecadcmd
+
+        - cd freecadcmd-tryout/helloworld
+        - freecadcmd ./helloworld.py
+        - cd -
+
+        - cd freecadcmd-tryout/take-screen-shot
+        - freecadcmd ./helloworld.py
+        - freecad ./take_screenshot.py || true
+        - ls -l screencapture
+        - cd -
+
+      after_failure:
+        - cat $HOME/.FreeCAD/FreeCAD.log

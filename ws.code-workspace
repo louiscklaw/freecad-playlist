@@ -4,7 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "/home/logic/_workspace/travis-playlist"
+			"path": "../travis-playlist"
+		},
+		{
+			"path": "../react-playlist"
 		}
 	],
 	"settings": {}
