@@ -31,6 +31,8 @@ jobs:
   include:
     - stage: Test
       name: freecadcmd-tryout, take-screen-shot
+      os: linux
+      dist: trusty
 
       # running freecad requires GUI
       before_script:
