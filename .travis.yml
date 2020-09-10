@@ -15,22 +15,22 @@ node_js:
 
 import:
   - credentials.yml
-  - freecadcmd-tryout/.travis.yml
+  # - freecadcmd-tryout/.travis.yml
   - .travis-merger.yml
   - .travis-stages.yml
 
-jobs:
-  include:
+# jobs:
+#   include:
 
-    - stage: Test
-      name: basic open freecad file test
-      script:
-        - echo "helloworld"
-        - sudo add-apt-repository -y ppa:freecad-maintainers/freecad-stable
-        - sudo apt-get update
-        - sudo apt-get install -y freecad freecad-python3
+#     - stage: Test
+#       name: basic open freecad file test
+#       script:
+#         - echo "helloworld"
+#         - sudo add-apt-repository -y ppa:freecad-maintainers/freecad-stable
+#         - sudo apt-get update
+#         - sudo apt-get install -y freecad freecad-python3
 
-        # - ls -l /usr/lib/freecad-python3/lib
-        - sudo mkdir /usr/lib/freecad-python3/Mod
-        # - python3 .travis/freecad_open_test.py common_parts.FCStd
-        - for i in $(ls -1 *.FCStd); do python3 ./.travis/freecad_open_test.py $i; done
+#         # - ls -l /usr/lib/freecad-python3/lib
+#         - sudo mkdir /usr/lib/freecad-python3/Mod
+#         # - python3 .travis/freecad_open_test.py common_parts.FCStd
+#         - for i in $(ls -1 *.FCStd); do python3 ./.travis/freecad_open_test.py $i; done
