@@ -72,7 +72,7 @@ freecad_document_name = os.path.basename(freecad_file_to_test).split('.')[0]
 print('testing freecad file {}'.format(freecad_file_to_test))
 
 
-# filename = '{}/_workspace/freecad-playlist/common_parts.FCStd'.format(USER_HOME_DIR)
+# # filename = '{}/_workspace/freecad-playlist/common_parts.FCStd'.format(USER_HOME_DIR)
 App.open(freecad_file_to_test)
 App.setActiveDocument(freecad_document_name)
 App.ActiveDocument.recompute()
