@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npx commitlint -e $GIT_PARAMS",
+      "pre-commit": "./scripts/pre-commit.sh",
+      "pre-push": "./scripts/pre-push.sh"
+    }
+  }
+}
